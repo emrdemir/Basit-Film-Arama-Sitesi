@@ -57,5 +57,5 @@ function redirectToIMDB() {
   });
 }
 
-// Film detaylarına yönlendirme fonksiyonunu çalıştırma.
+
 redirectToIMDB();
