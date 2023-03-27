@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Movie App</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Movie App</h1>
+<head>
+    <title>Film Arama Sitesi</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Film Arama</h1>
     <form id="search-form">
-      <label for="search-input">Search for a movie:</label>
-      <input type="text" id="search-input" required />
-      <input type="submit" value="Search" />
+      <input type="text" id="search-input" placeholder="Film adı girin...">
+      <button type="submit">Ara</button>
     </form>
+  </header>
+  <main>
     <div id="results"></div>
-    <script src="script.js"></script>
-  </body>
+  </main>
+  <footer>
+    &copy; Tüm Hakları Saklıdır.
+  </footer>
+  <script src="script.js"></script>
+</body>
 </html>
