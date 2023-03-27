@@ -1,51 +1,49 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: #f1f1f1;
 }
 
+header {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
 h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 form {
-  background-color: #fff;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin: 20px auto;
-  padding: 20px;
-  width: 80%;
-  max-width: 500px;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-}
-
-label {
-  display: block;
-  margin: 10px 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 input[type="text"] {
-  background-color: #eee;
-  border: 1px solid #999;
+  flex: 1;
   padding: 10px;
-  margin: 0 10px;
   border: none;
   border-radius: 5px;
-  width: 70%;
-  max-width: 400px;
+  margin-right: 10px;
+  background-color: #f1f1f1;
+  color: #333;
   font-size: 1.2em;
-  margin-left: revert;
+  width: 100%;
+  max-width: 400px;
 }
 
-input[type="submit"] {
+button[type="submit"] {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -54,58 +52,94 @@ input[type="submit"] {
   font-size: 1.2em;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  -webkit-transition: background-color 0.3s ease, transform 0.3s ease;
-  -moz-transition: background-color 0.3s ease, transform 0.3s ease;
-  -ms-transition: background-color 0.3s ease, transform 0.3s ease;
-  -o-transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-input[type="submit"]:hover {
+button[type="submit"]:hover {
   background-color: #fff;
   color: #f44336;
   transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 #results {
-  margin: 20px auto;
-  width: 80%;
-  max-width: 800px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+.movie {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(0);
 }
 
-.movie {
-  border: 1px solid #ccc;
-  width: 250px;
-  margin: 10px 20px;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
+.movie:hover {
+  transform: translateY(-5px);
+}
+
+.poster {
   overflow: hidden;
 }
 
-.movie img {
-  width: 100%;
-  height: auto;
+.poster img {
+  transition: transform 0.3s ease;
 }
 
-.movie h2 {
-  margin: 10px;
-  font-size: 1.2em;
+.details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.movie p {
-  margin: 10px;
+.movie:hover .details {
+  opacity: 1;
+}
+
+.details h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #f44336;
+}
+
+.details p {
   font-size: 1em;
-  line-height: 1.4em;
+  margin-bottom: 5px;
 }
-.movie:hover {
-  cursor: pointer;
-  transform: translateY(-0.25rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+
+.details p.plot {
+  margin-bottom: 20px;
+}
+footer {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #333;
+  font-size: 0.8em;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  form {
+    max-width: 100%;
+    padding: 0 20px;
+  }
 }
